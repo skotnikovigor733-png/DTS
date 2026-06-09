@@ -1,39 +1,39 @@
 const menuProducts = [
-    // === ГРИЛЬ & BBQ (Стейки) ===
-    { id: 1, category: "grill", title: "Стейк «Прораб»", desc: "Премиальная мраморная говядина на мощном гриле.", price: 450, img: "https://i.imgur.com/r3X91n7.jpg" },
-    { id: 2, category: "grill", title: "Ребра «Арматурные»", desc: "Свиные ребрышки тактического копчения в соусе барбекю.", price: 520, img: "https://i.imgur.com/r3X91n7.jpg" },
-    { id: 3, category: "grill", title: "Колбаски «Индустриальные»", desc: "Шашлычные колбаски со специями и дымком.", price: 410, img: "https://i.imgur.com/r3X91n7.jpg" },
-    { id: 4, category: "grill", title: "Шашлык «Железобетонный»", desc: "Классический сочный свиной шашлык на углях с луком.", price: 380, img: "https://i.imgur.com/r3X91n7.jpg" },
+    // === ГРИЛЬ & BBQ ===
+    { id: 1, category: "grill", title: "Стейк «Прораб»", desc: "Премиальная мраморная говядина на мощном гриле.", price: 450, img: "https://picsum.photos/id/63/400/300" },
+    { id: 2, category: "grill", title: "Ребра «Арматурные»", desc: "Свиные ребрышки тактического копчения в соусе барбекю.", price: 520, img: "https://picsum.photos/id/75/400/300" },
+    { id: 3, category: "grill", title: "Колбаски «Индустриальные»", desc: "Шашлычные колбаски со специями и дымком.", price: 410, img: "https://picsum.photos/id/102/400/300" },
+    { id: 4, category: "grill", title: "Шашлык «Железобетонный»", desc: "Классический сочный свиной шашлык на углях с луком.", price: 380, img: "https://picsum.photos/id/146/400/300" },
 
     // === БУРГЕРЫ ===
-    { id: 5, category: "burgers", title: "Бургер «Фундаментальный»", desc: "Двойная котлета, сыр чеддер, авторский соус на черной булке.", price: 390, img: "https://i.imgur.com/O6S6Xv7.jpg" },
-    { id: 6, category: "burgers", title: "Чикен-Лофт Бургер", desc: "Куриное филе в хрустящей панировке, майонез, салат.", price: 320, img: "https://i.imgur.com/O6S6Xv7.jpg" },
-    { id: 7, category: "burgers", title: "Мега-Бургер «Бетон»", desc: "Огромный трехэтажный бургер для истинных строителей.", price: 590, img: "https://i.imgur.com/O6S6Xv7.jpg" },
-    { id: 8, category: "burgers", title: "Острый «Калибр»", desc: "Огненный бургер с перцем халапеньо и соусом чили.", price: 360, img: "https://i.imgur.com/O6S6Xv7.jpg" },
+    { id: 5, category: "burgers", title: "Бургер «Фундаментальный»", desc: "Двойная котлета, сыр чеддер, авторский соус на черной булке.", price: 390, img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400&auto=format&fit=crop" },
+    { id: 6, category: "burgers", title: "Чикен-Лофт Бургер", desc: "Куриное филе в хрустящей панировке, майонез, салат.", price: 320, img: "https://images.unsplash.com/photo-1606131731446-5568d87113aa?q=80&w=400&auto=format&fit=crop" },
+    { id: 7, category: "burgers", title: "Мега-Бургер «Бетон»", desc: "Огромный трехэтажный бургер для истинных строителей.", price: 590, img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=400&auto=format&fit=crop" },
+    { id: 8, category: "burgers", title: "Острый «Калибр»", desc: "Огненный бургер с перцем халапеньо и соусом чили.", price: 360, img: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=400&auto=format&fit=crop" },
 
     // === ПИЦЦА & ВЫПЕЧКА ===
-    { id: 9, category: "pizza", title: "Пицца «Кирпич-Пепперони»", desc: "Острая колбаса пепперони, много моцареллы, томатный соус.", price: 490, img: "https://i.imgur.com/b9u2MhY.jpg" },
-    { id: 10, category: "pizza", title: "Пицца «4 Металла»", desc: "Четыре изысканных сыра на тонком хрустящем тесте.", price: 510, img: "https://i.imgur.com/b9u2MhY.jpg" },
-    { id: 11, category: "pizza", title: "Пицца «Мастерок»", desc: "Домашняя пицца с ветчиной, грибами и зеленью.", price: 460, img: "https://i.imgur.com/b9u2MhY.jpg" },
-    { id: 12, category: "pizza", title: "Чесночный багет ДТС", desc: "Свежевыпеченный багет с ароматным чесночным маслом.", price: 140, img: "https://i.imgur.com/b9u2MhY.jpg" },
+    { id: 9, category: "pizza", title: "Пицца «Кирпич-Пепперони»", desc: "Острая колбаса пепперони, много моцареллы, томатный соус.", price: 490, img: "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=400&auto=format&fit=crop" },
+    { id: 10, category: "pizza", title: "Пицца «4 Металла»", desc: "Четыре изысканных сыра на тонком хрустящем тесте.", price: 510, img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=400&auto=format&fit=crop" },
+    { id: 11, category: "pizza", title: "Пицца «Мастерок»", desc: "Домашняя пицца с ветчиной, грибами и зеленью.", price: 460, img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=400&auto=format&fit=crop" },
+    { id: 12, category: "pizza", title: "Чесночный багет ДТС", desc: "Свежевыпеченный багет с ароматным чесночным маслом.", price: 140, img: "https://picsum.photos/id/192/400/300" },
 
     // === ДЕСЕРТЫ ===
-    { id: 13, category: "desserts", title: "Пончик «Монтажная пена»", desc: "Нежный донат со сливочной глазурью и посыпкой.", price: 110, img: "https://i.imgur.com/Y36eFh8.jpg" },
-    { id: 14, category: "desserts", title: "Торт «Шоколадный Уровень»", desc: "Многослойный шоколадный бисквит с насыщенным крем-чизом.", price: 210, img: "https://i.imgur.com/Y36eFh8.jpg" },
-    { id: 15, category: "desserts", title: "Чизкейк «Шпаклевка»", desc: "Классический нью-йоркский нежный творожный десерт.", price: 190, img: "https://i.imgur.com/Y36eFh8.jpg" },
-    { id: 16, category: "desserts", title: "Вафли «Опалубка»", desc: "Бельгийские рифленые вафли с карамельным топпингом.", price: 160, img: "https://i.imgur.com/Y36eFh8.jpg" },
+    { id: 13, category: "desserts", title: "Пончик «Монтажная пена»", desc: "Нежный донат со сливочной глазурью и посыпкой.", price: 110, img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=400&auto=format&fit=crop" },
+    { id: 14, category: "desserts", title: "Торт «Шоколадный Уровень»", desc: "Многослойный шоколадный бисквит с насыщенным крем-чизом.", price: 210, img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=400&auto=format&fit=crop" },
+    { id: 15, category: "desserts", title: "Чизкейк «Шпаклевка»", desc: "Классический нью-йоркский нежный творожный десерт.", price: 190, img: "https://images.unsplash.com/photo-1524351199679-46cddf530c04?q=80&w=400&auto=format&fit=crop" },
+    { id: 16, category: "desserts", title: "Вафли «Опалубка»", desc: "Бельгийские рифленые вафли с карамельным топпингом.", price: 160, img: "https://images.unsplash.com/photo-1562376502-6f769499c886?q=80&w=400&auto=format&fit=crop" },
 
     // === НАПИТКИ ===
-    { id: 17, category: "drinks", title: "Лимонад «Энергетик ДТС»", desc: "Бодрящий газированный цитрусовый микс.", price: 150, img: "https://i.imgur.com/H6zWJsc.jpg" },
-    { id: 18, category: "drinks", title: "Холодный Кофе «Сварщик»", desc: "Тонизирующий айс-латте с карамельным сиропом.", price: 180, img: "https://i.imgur.com/H6zWJsc.jpg" },
-    { id: 19, category: "drinks", title: "Крафтовый Квас ДТС", desc: "Натуральный резвый квас на ржаном хлебе.", price: 120, img: "https://i.imgur.com/H6zWJsc.jpg" },
-    { id: 20, category: "drinks", title: "Горячий Чай «Анкер»", desc: "Крепкий черный листовой чай с бергамотом и лимоном.", price: 90, img: "https://i.imgur.com/H6zWJsc.jpg" },
+    { id: 17, category: "drinks", title: "Лимонад «Энергетик ДТС»", desc: "Бодрящий газированный цитрусовый микс.", price: 150, img: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=400&auto=format&fit=crop" },
+    { id: 18, category: "drinks", title: "Холодный Кофе «Сварщик»", desc: "Тонизирующий айс-латте с карамельным сиропом.", price: 180, img: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=400&auto=format&fit=crop" },
+    { id: 19, category: "drinks", title: "Крафтовый Квас ДТС", desc: "Натуральный резвый квас на ржаном хлебе.", price: 120, img: "https://picsum.photos/id/225/400/300" },
+    { id: 20, category: "drinks", title: "Горячий Чай «Анкер»", desc: "Крепкий черный листовой чай с бергамотом и лимоном.", price: 90, img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=400&auto=format&fit=crop" },
     
     // === ДОПОЛНИТЕЛЬНОЕ НАПОЛНЕНИЕ ===
-    { id: 21, category: "street", title: "Лапша WOK «Сварка»", desc: "Острая пшеничная лапша с овощами и курицей.", price: 350, img: "https://i.imgur.com/b9u2MhY.jpg" },
-    { id: 22, category: "pizza", title: "Мини-пицца «Детская»", desc: "Сырная пицца небольшого диаметра с сосисками.", price: 250, img: "https://i.imgur.com/b9u2MhY.jpg" },
-    { id: 23, category: "desserts", title: "Круассан Французский", desc: "Слоеная воздушная выпечка с начинкой из сгущенки.", price: 130, img: "https://i.imgur.com/Y36eFh8.jpg" },
-    { id: 24, category: "grill", title: "Овощи на гриле ДТС", desc: "Болгарский перец, баклажаны и томаты с соусом песто.", price: 290, img: "https://i.imgur.com/r3X91n7.jpg" }
+    { id: 21, category: "street", title: "Лапша WOK «Сварка»", desc: "Острая пшеничная лапша с овощами и курицей.", price: 350, img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=400&auto=format&fit=crop" },
+    { id: 22, category: "pizza", title: "Мини-пицца «Детская»", desc: "Сырная пицца небольшого диаметра с сосисками.", price: 250, img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=400&auto=format&fit=crop" },
+    { id: 23, category: "desserts", title: "Круассан Французский", desc: "Слоеная воздушная выпечка с начинкой из сгущенки.", price: 130, img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=400&auto=format&fit=crop" },
+    { id: 24, category: "grill", title: "Овощи на гриле ДТС", desc: "Болгарский перец, баклажаны и томаты с соусом песто.", price: 290, img: "https://images.unsplash.com/photo-1534939561126-855b8675edd7?q=80&w=400&auto=format&fit=crop" }
 ];
 
 let cart = [];
