@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTS FoodFest — Доставка еды и билеты</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="dts-nav">
+        <div class="nav-container">
+            <div class="logo-area" onclick="navigateTo('hero')" style="cursor:pointer;">
+                <img src="logo.png" alt="ДТС Лого" class="dts-logo-img" onerror="this.style.display='none'">
+                <span class="logo-text">FoodFest</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-item active" id="nav-hero">Главная</a>
+                <a href="#" class="nav-item" id="nav-menu">Ассортимент</a>
+                <a href="#" class="nav-item" id="nav-map">Карта зон</a>
+                <a href="#" class="nav-item" id="nav-reviews">Отзывы</a>
+                <a href="#" class="nav-item" id="nav-account" style="display:none;">Личный кабинет</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-cart" onclick="toggleCart()">
+                    <span class="material-symbols-rounded">shopping_cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="btn-primary-sm" id="authBtn" onclick="toggleAuthModal()">Войти</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        
+        <section id="hero" class="hero-section">
+            <div class="hero-badge">
+                <span class="material-symbols-rounded">construction</span> Инновации Дальторгсервис
+            </div>
+            <h1 class="hero-title">DTS <span class="text-red">F<span style="color:var(--primary-red)">o</span>odFest</span></h1>
+            <p class="hero-subtitle">Интеллектуальная экосистема доставки еды и экспресс-заказов</p>
+            <div class="cta-group">
+                <button class="btn-primary" onclick="navigateTo('menu-section')">Заказать еду онлайн</button>
+                <button class="btn-secondary" onclick="navigateTo('hero'); window.location.href='#interesting';">Гастро-Гид ДТС</button>
+            </div>
+        </section>
+
+        <section id="timer-module" class="info-module">
+            <div class="card timer-card">
+                <div class="card-header"><span class="material-symbols-rounded icon-red">schedule</span><h3>До старта фестиваля</h3></div>
+                <div id="countdown" class="dts-countdown">
+                    <div class="time-seg"><span id="days">00</span><label>дней</label></div>
+                    <div class="time-seg"><span id="hours">00</span><label>часов</label></div>
+                    <div class="time-seg"><span id="minutes">00</span><label>минут</label></div>
+                    <div class="time-seg"><span id="seconds">00</span><label>секунд</label></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu-section" class="trucks-section">
+            <h2 class="section-title">Ассортимент <span class="text-red">и Меню</span></h2>
+            <p class="section-subtitle">Быстрая доставка еды прямо к вашему столу или на улицы города</p>
+
+            <div class="filter-group">
+                <button class="chip active" onclick="filterCategory('all', event)">Все</button>
+                <button class="chip" onclick="filterCategory('grill', event)">Гриль & BBQ</button>
+                <button class="chip" onclick="filterCategory('burgers', event)">Бургеры</button>
+                <button class="chip" onclick="filterCategory('pizza', event)">Пицца & Выпечка</button>
+                <button class="chip" onclick="filterCategory('desserts', event)">Десерты</button>
+                <button class="chip" onclick="filterCategory('drinks', event)">Напитки</button>
+            </div>
+
+            <div class="trucks-grid" id="menuGrid">
+                </div>
+        </section>
+
+        <section id="map" class="map-section">
+            <h2 class="section-title">Карта локаций <span class="text-red">DTS</span></h2>
+            <div class="map-container">
+                <div class="map-zones">
+                    <div class="zone-btn active" onclick="switchZone('stage', this)"><span class="material-symbols-rounded">theater_comedy</span><div><h4>Главная сцена</h4><p>Индустриальный лофт</p></div></div>
+                    <div class="zone-btn" onclick="switchZone('food', this)"><span class="material-symbols-rounded">lunch_dining</span><div><h4>Гастро-аллея</h4><p>Фуд-траки и маркет</p></div></div>
+                    <div class="zone-btn" onclick="switchZone('lounge', this)"><span class="material-symbols-rounded">chair</span><div><h4>Лаунж-зона ДТС</h4><p>Пространство отдыха</p></div></div>
+                </div>
+                <div class="map-details" id="zoneDetails">
+                    <div class="badge-materials">Материалы: Металлоконструкции ДТС</div>
+                    <h3>Главная сцена DTS Stage</h3>
+                    <p>Центральная точка фестиваля, собранная из прочных металлоконструкций компании Дальторгсервис.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interesting" class="interesting-section" style="margin-top: 60px; margin-bottom: 60px;">
+            <h2 class="section-title">Гастро-Гид <span class="text-red">«Дальторгсервис»</span></h2>
+            <p class="section-subtitle">Технологии строительства на службе уличной кулинарии</p>
+            <div class="interesting-grid">
+                <div class="interesting-card">
+                    <span class="material-symbols-rounded icon-red">thermostat</span>
+                    <h4>Теплоизоляция блюд</h4>
+                    <p>Для сохранения сочности стейков наши фуд-траки используют термобоксы, изолированные базальтовой ватой повышенной плотности из ассортимента ДТС.</p>
+                </div>
+                <div class="interesting-card">
+                    <span class="material-symbols-rounded icon-red">local_shipping</span>
+                    <h4>Умная логистика</h4>
+                    <p>Курьерская служба распределяет заказы по секторам фестивальной зоны, используя координатную сетку строительного плана объекта.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="booking-section">
+            <h2 class="section-title">Электронные <span class="text-red">Билеты</span></h2>
+            <div class="booking-container">
+                <div class="booking-form-side">
+                    <form id="ticketForm" onsubmit="generateTicket(event)">
+                        <div class="input-group"><label>Ваше имя</label><input type="text" id="userName" placeholder="Иван Иванов" required></div>
+                        <div class="input-group"><label>E-mail</label><input type="email" id="userEmail" placeholder="example@mail.ru" required></div>
+                        <div class="input-group"><label>Зона доступа</label>
+                            <select id="ticketType">
+                                <option value="Стандарт">Стандарт — 0 ₽</option>
+                                <option value="VIP Прораб">VIP Прораб — 1500 ₽</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit"><span class="material-symbols-rounded">qr_code_scanner</span>Оформить билет</button>
+                    </form>
+                </div>
+                <div class="booking-ticket-side">
+                    <div id="ticketResult" class="ticket-card-ghost">
+                        <div class="ghost-message"><span class="material-symbols-rounded icon-huge">confirmation_number</span><p>Билет отобразится здесь и сохранится в личном кабинете</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews-section" class="reviews-section" style="margin-top: 60px; margin-bottom: 60px;">
+            <h2 class="section-title">Отзывы <span class="text-red">Посетителей</span></h2>
+            <p class="section-subtitle">Оцените качество обслуживания и скорость доставки еды</p>
+            
+            <div class="reviews-container">
+                <div class="review-form-card">
+                    <h3>Оставить отзыв</h3>
+                    <form id="reviewForm" onsubmit="addReview(event)">
+                        <div class="input-group"><label>Ваше имя</label><input type="text" id="reviewAuthor" placeholder="Игорь С." required></div>
+                        <div class="input-group">
+                            <label>Оценка</label>
+                            <select id="reviewRating">
+                                <option value="5">⭐⭐⭐⭐⭐ (Отлично)</option>
+                                <option value="4">⭐⭐⭐⭐ (Хорошо)</option>
+                                <option value="3">⭐⭐ (Удовлетворительно)</option>
+                            </select>
+                        </div>
+                        <div class="input-group"><label>Комментарий</label><textarea id="reviewText" rows="3" placeholder="Доставка супер, бургер горячий!" required></textarea></div>
+                        <button type="submit" class="btn-submit">Опубликовать</button>
+                    </form>
+                </div>
+
+                <div class="reviews-display-card">
+                    <h3>Стена отзывов</h3>
+                    <div id="reviewsList" class="reviews-list-scroll">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="account-section" class="account-section" style="display:none;">
+            <h2 class="section-title">Личный кабинет <span class="text-red">Клиента</span></h2>
+            <div class="account-grid">
+                <div class="account-info-card">
+                    <span class="material-symbols-rounded account-avatar">account_circle</span>
+                    <h3 id="profileName">Пользователь</h3>
+                    <p id="profileEmail">email@mail.ru</p>
+                    <button class="btn-secondary" onclick="logout()" style="margin-top:20px; width:100%;">Выйти из аккаунта</button>
+                </div>
+                <div class="account-data-card">
+                    <h3>Мои заказы еды</h3>
+                    <div id="ordersList" class="orders-list"><p class="text-muted">Вы еще не совершали заказов.</p></div>
+                    <h3 style="margin-top: 30px;">Мои билеты</h3>
+                    <div id="userTicketsList" class="orders-list"><p class="text-muted">У вас нет активных билетов.</p></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal-overlay" id="loginModal">
+        <div class="google-modal">
+            <button class="close-modal" onclick="closeModal('loginModal')">&times;</button>
+            <div class="modal-header">
+                <h2>Вход в DTS ID</h2>
+            </div>
+            <form id="loginForm" onsubmit="login(event)">
+                <div class="input-group"><label>Электронная почта</label><input type="email" id="authEmail" value="admin@dts.ru" required></div>
+                <div class="input-group"><label>Пароль</label><input type="password" id="authPassword" value="123456" required></div>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:15px;">Тест: admin@dts.ru / 123456</p>
+                <button type="submit" class="btn-submit">Войти</button>
+                <p style="font-size:0.9rem; margin-top:20px; color:var(--text-muted);">
+                    Ещё нет аккаунта? <a href="#" onclick="openRegisterFromLogin(event)" style="color:var(--primary-red); font-weight:700; text-decoration:none;">Зарегистрироваться</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="registerModal">
+        <div class="google-modal">
+            <button class="close-modal" onclick="closeModal('registerModal')">&times;</button>
+            <div class="modal-header">
+                <h2>Создать аккаунт</h2>
+            </div>
+            <form id="registerForm" onsubmit="register(event)">
+                <div class="input-group"><label>Ваше Имя</label><input type="text" id="regName" placeholder="Алексей" required></div>
+                <div class="input-group"><label>Электронная почта</label><input type="email" id="regEmail" placeholder="alex@dts.ru" required></div>
+                <div class="input-group"><label>Придумайте пароль</label><input type="password" id="regPassword" placeholder="******" required></div>
+                <button type="submit" class="btn-submit">Зарегистрироваться</button>
+                <p style="font-size:0.9rem; margin-top:20px; color:var(--text-muted);">
+                    Уже есть аккаунт? <a href="#" onclick="openLoginFromRegister(event)" style="color:var(--primary-red); font-weight:700; text-decoration:none;">Войти</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Оформление заказа</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        
+        <div class="delivery-time-badge" id="deliveryTimeBox">
+            <span class="material-symbols-rounded">pace</span>
+            <span id="estimatedTimeText">Время ожидания: 0 мин.</span>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            </div>
+
+        <div class="checkout-fields-container">
+            <div class="input-group-sm">
+                <label>Улица доставки (Уссурийск)</label>
+                <select id="deliveryStreet">
+                    <option value="Фестивальная зона ДТС">Фестивальная зона ДТС (Самовывоз)</option>
+                    <option value="ул. Ленина">ул. Ленина (Доставка курьером)</option>
+                    <option value="ул. Некрасова">ул. Некрасова (Доставка курьером)</option>
+                    <option value="ул. Чичерина">ул. Чичерина (Доставка курьером)</option>
+                    <option value="ул. Владивостокское шоссе">ул. Владивостокское шоссе (Доставка курьером)</option>
+                </select>
+            </div>
+            <div class="input-group-sm" style="margin-top: 10px;">
+                <label>Способ оплаты</label>
+                <select id="paymentType">
+                    <option value="Банковская карта онлайн">Банковская карта онлайн</option>
+                    <option value="Система быстрых платежей (СБП)">Система быстрых платежей (СБП)</option>
+                    <option value="Наличными при получении">Наличными при получении</option>
+                </select>
+            </div>
+            <div class="promocode-area" style="margin-top: 12px;">
+                <input type="text" id="promoInput" placeholder="Промокод (DTS2026)">
+                <button onclick="applyPromo()">Применить</button>
+            </div>
+            <p id="promoStatusMessage" style="font-size:0.8rem; font-weight:700; margin-top:5px; display:none;"></p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total"><span>Итого к оплате:</span><span id="cartTotalSum">0 ₽</span></div>
+            <button class="btn-submit" onclick="checkoutOrder()">Оплатить и заказать</button>
+        </div>
+    </div>
+
+    <footer class="dts-footer">
+        <div class="footer-logo"><span>Дипломный проект интернет-сервиса ООО «Дальторгсервис» &bull; 2026</span></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
