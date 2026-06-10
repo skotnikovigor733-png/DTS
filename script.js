@@ -52,7 +52,8 @@ function navigateTo(pageId) {
 
     if (pageId === 'hero') {
         ['timer-module', 'map', 'interesting', 'booking', 'reviews-section'].forEach(id => {
-            document.getElementById(id).style.display = 'block';
+            const element = document.getElementById(id);
+            if (element) element.style.display = 'block';
         });
     }
 
@@ -65,7 +66,12 @@ function navigateTo(pageId) {
     window.scrollTo(0, 0);
 }
 
-// ФУНКЦИЯ РЕНДЕРИНГА КАРТОЧЕК С ИКОНКАМИ И ГРАДИЕНТАМИ
+document.getElementById('nav-hero').onclick = function(e) { e.preventDefault(); navigateTo('hero'); };
+document.getElementById('nav-menu').onclick = function(e) { e.preventDefault(); navigateTo('menu-section'); };
+document.getElementById('nav-map').onclick = function(e) { e.preventDefault(); navigateTo('map'); };
+document.getElementById('nav-reviews').onclick = function(e) { e.preventDefault(); navigateTo('reviews-section'); };
+document.getElementById('nav-account').onclick = function(e) { e.preventDefault(); navigateTo('account-section'); };
+
 function renderMenu(category) {
     const grid = document.getElementById('menuGrid');
     if (!grid) return; grid.innerHTML = '';
@@ -89,7 +95,7 @@ function renderMenu(category) {
                 <div class="truck-content">
                     <h3>${p.title}</h3>
                     <p class="truck-desc">${p.desc}</p>
-                    <div class="truck-footer"><span class="price">${p.price} ₽</span><button class="btn-card-action" onclick="addToCart(${p.id})">В корзину</button></div>
+                    <div class="truck-footer"><span class="price">${p.price} ₽</span><button class="btn-card-action" onclick="addToCart(${p.id})">В козину</button></div>
                 </div>
             </div>`;
     });
@@ -174,19 +180,24 @@ function renderReviews() {
     });
 }
 
-function openModal(modalId) { const m = document.getElementById(modalId); if (m) m.style.display = 'flex'; }
-// Изменили название, чтобы не конфликтовать со стандартными методами браузера
-function closeModal(modalId) { const m = document.getElementById(modalId); if (m) m.style.display = 'none'; }
-function toggleAuthModal() { openModal('loginModal'); }
-function openRegisterFromLogin(e) { e.preventDefault(); closeModal('loginModal'); openModal('registerModal'); }
-function openLoginFromRegister(e) { e.preventDefault(); closeModal('registerModal'); openModal('loginModal'); }
+function toggleAuthModal() {
+    const modal = document.getElementById('loginModal');
+    if (!modal) return;
+    if (modal.style.display === 'flex') { modal.style.display = 'none'; }
+    else { modal.style.display = 'flex'; }
+}
 
-function triggerGoogleMock() { closeModal('loginModal'); openModal('googleMockModal'); }
+function openRegisterFromLogin(e) { e.preventDefault(); document.getElementById('loginModal').style.display = 'none'; document.getElementById('registerModal').style.display = 'flex'; }
+function openLoginFromRegister(e) { e.preventDefault(); document.getElementById('registerModal').style.display = 'none'; document.getElementById('loginModal').style.display = 'flex'; }
+function closeRegisterModal() { document.getElementById('registerModal').style.display = 'none'; }
+function closeGoogleMock() { document.getElementById('googleMockModal').style.display = 'none'; }
+
+function triggerGoogleMock() { document.getElementById('loginModal').style.display = 'none'; document.getElementById('googleMockModal').style.display = 'flex'; }
 
 function selectGoogleAccount(name, email) {
     currentUser = { name: name, email: email };
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    closeModal('googleMockModal'); updateAuthUI(); renderAccountData(); navigateTo('account-section');
+    document.getElementById('googleMockModal').style.display = 'none'; updateAuthUI(); renderAccountData(); navigateTo('account-section');
     alert(`Успешный вход через Google ID как ${name}!`);
 }
 
@@ -195,7 +206,7 @@ function register(e) {
     let base = JSON.parse(localStorage.getItem('dts_users_base')) || [];
     if (base.some(u => u.email === email)) { alert('Почта занята!'); return; }
     base.push({ name, email, password }); localStorage.setItem('dts_users_base', JSON.stringify(base));
-    alert('Аккаунт создан!'); document.getElementById('registerForm').reset(); closeModal('registerModal'); openModal('loginModal'); document.getElementById('authEmail').value = email;
+    alert('Аккаунт создан!'); document.getElementById('registerForm').reset(); document.getElementById('registerModal').style.display = 'none'; document.getElementById('loginModal').style.display = 'flex'; document.getElementById('authEmail').value = email;
 }
 
 function login(e) {
@@ -206,7 +217,7 @@ function login(e) {
         const u = base.find(x => x.email === email && x.password === password);
         if (!u) { alert('Ошибка входа!'); return; } currentUser = { name: u.name, email: u.email };
     }
-    localStorage.setItem('currentUser', JSON.stringify(currentUser)); closeModal('loginModal'); updateAuthUI(); renderAccountData(); navigateTo('account-section');
+    localStorage.setItem('currentUser', JSON.stringify(currentUser)); document.getElementById('loginModal').style.display = 'none'; updateAuthUI(); renderAccountData(); navigateTo('account-section');
 }
 
 function logout() { localStorage.removeItem('currentUser'); currentUser = null; updateAuthUI(); navigateTo('hero'); }
