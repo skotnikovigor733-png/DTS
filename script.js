@@ -77,29 +77,45 @@ function renderMenu(category) {
     if (!grid) return; grid.innerHTML = '';
     const filtered = menuProducts.filter(p => category === 'all' || p.category === category);
     
-    const categoryIcons = {
-        grill: { icon: "flatware", bg: "linear-gradient(135deg, #da291c, #991f16)" },
-        burgers: { icon: "lunch_dining", bg: "linear-gradient(135deg, #111111, #333333)" },
-        pizza: { icon: "local_pizza", bg: "linear-gradient(135deg, #ff9900, #cc6600)" },
-        desserts: { icon: "cake", bg: "linear-gradient(135deg, #e06666, #b63a3a)" },
-        drinks: { icon: "local_bar", bg: "linear-gradient(135deg, #3cc157, #1e7e34)" }
-    };
-
     filtered.forEach(p => {
-        const styleData = categoryIcons[p.category] || { icon: "restaurant", bg: "linear-gradient(135deg, #5f6368, #3c4043)" };
         grid.innerHTML += `
-            <div class="truck-card">
-                <div style="height: 170px; background: ${styleData.bg}; display: flex; align-items: center; justify-content: center; color: white;">
-                    <span class="material-symbols-rounded" style="font-size: 64px; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2));">${styleData.icon}</span>
+            <div class="truck-card" onclick="openProductModal(${p.id})">
+                <div style="height: 170px; overflow: hidden; background:#f1f3f4;">
+                    <img src="${p.img}" style="width: 100%; height: 100%; object-fit: cover;" alt="${p.title}">
                 </div>
                 <div class="truck-content">
                     <h3>${p.title}</h3>
                     <p class="truck-desc">${p.desc}</p>
-                    <div class="truck-footer"><span class="price">${p.price} ₽</span><button class="btn-card-action" onclick="addToCart(${p.id})">В козину</button></div>
+                    <div class="truck-footer">
+                        <span class="price">${p.price} ₽</span>
+                        <button class="btn-card-action" onclick="event.stopPropagation(); addToCart(${p.id})">В корзину</button>
+                    </div>
                 </div>
             </div>`;
     });
 }
+
+function openProductModal(productId) {
+    const product = menuProducts.find(p => p.id === productId);
+    if (!product) return;
+
+    document.getElementById('modalProductImg').src = product.img;
+    document.getElementById('modalProductImg').alt = product.title;
+    document.getElementById('modalProductTitle').innerText = product.title;
+    document.getElementById('modalProductDesc').innerText = product.desc + " Мы тщательно следим за качеством ингредиентов и скоростью нашей курьерской службы доставки, чтобы блюдо приехало к вам горячим.";
+    document.getElementById('modalProductPrice').innerText = product.price + " ₽";
+    document.getElementById('modalProductCategory').innerText = product.category;
+
+    document.getElementById('modalProductActionSlot').innerHTML = `
+        <button class="btn-primary" onclick="addToCart(${product.id}); closeProductModal();" style="padding: 12px 28px; font-size: 0.95rem;">
+            В корзину
+        </button>
+    `;
+    document.getElementById('productModal').style.display = 'flex';
+}
+
+function closeProductModal() { document.getElementById('productModal').style.display = 'none'; }
+function closeProductModalOutside(event) { if (event.target.id === 'productModal') { closeProductModal(); } }
 
 function filterCategory(category, event) {
     document.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); event.target.classList.add('active');

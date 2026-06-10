@@ -58,7 +58,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 .chip { background-color: var(--surface-light); border: 1px solid #e8eaed; padding: 10px 24px; border-radius: 100px; font-family: inherit; font-weight: 600; cursor: pointer; transition: var(--transition); }
 .chip.active { background-color: var(--surface-dark); color: #fff; border-color: var(--surface-dark); }
 .trucks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-.truck-card { background: var(--bg-white); border: 1px solid #e8eaed; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); }
+.truck-card { background: var(--bg-white); border: 1px solid #e8eaed; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); cursor: pointer; }
 .truck-card:hover { transform: translateY(-4px); border-color: var(--primary-red); box-shadow: 0 12px 30px rgba(0,0,0,0.05); }
 .truck-content { padding: 24px; display: flex; flex-direction: column; flex: 1; text-align: left; }
 .truck-content h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; color: var(--text-black); }
@@ -138,5 +138,5 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .hero-title { font-size: 2.8rem; }
-    .map-container, .booking-container, .interesting-grid { grid-template-columns: 1fr; }
+    .map-container, .booking-container, .account-grid, .reviews-container, .interesting-grid { grid-template-columns: 1fr; }
 }
