@@ -150,6 +150,7 @@
                             </select>
                         </div>
                         <div class="input-group"><label>Комментарий</label><textarea id="reviewText" rows="3" placeholder="Доставка супер, бургер горячий!" required></textarea></div>
+                        <div style="height:10px;"></div>
                         <button type="submit" class="btn-submit">Опубликовать</button>
                     </form>
                 </div>
@@ -186,7 +187,7 @@
         <div class="google-modal">
             <button class="close-modal" onclick="toggleAuthModal()">&times;</button>
             <div class="modal-header">
-                <h2 style="margin-bottom: 20px;">Вход в DTS ID</h2>
+                <h2 style="margin-bottom: 20px; font-size: 1.6rem; font-weight:800;">Вход в DTS ID</h2>
             </div>
             
             <button class="btn-google-auth" onclick="triggerGoogleMock()">
@@ -199,9 +200,9 @@
             <form id="loginForm" onsubmit="login(event)">
                 <div class="input-group"><label>Электронная почта</label><input type="email" id="authEmail" value="admin@dts.ru" required></div>
                 <div class="input-group"><label>Пароль</label><input type="password" id="authPassword" value="123456" required></div>
-                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:15px;">Тест: admin@dts.ru / 123456</p>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:15px; text-align:center;">Тест: admin@dts.ru / 123456</p>
                 <button type="submit" class="btn-submit">Войти</button>
-                <p style="font-size:0.9rem; margin-top:20px; color:var(--text-muted);">
+                <p style="font-size:0.9rem; margin-top:20px; color:var(--text-muted); text-align:center;">
                     Ещё нет аккаунта? <a href="#" onclick="openRegisterFromLogin(event)" style="color:var(--primary-red); font-weight:700; text-decoration:none;">Зарегистрироваться</a>
                 </p>
             </form>
@@ -213,19 +214,19 @@
             <button class="close-modal" onclick="closeGoogleMock()">&times;</button>
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" style="height:24px; margin-bottom:16px;">
             <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:4px;">Вход с помощью Google</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Выберите аккаунт для перехода в приложение DTS FoodFest</p>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Выберите аккаунт для перехода в DTS FoodFest</p>
             
             <div class="google-account-select-box" onclick="selectGoogleAccount('Buba', 'buba-s-projects1@gmail.com')">
                 <span class="material-symbols-rounded" style="font-size:32px; color:var(--text-muted)">account_circle</span>
                 <div style="text-align:left;">
-                    <strong style="font-size:0.9rem; display:block;">Buba</strong>
+                    <strong style="font-size:0.9rem; display:block; color:#000;">Buba</strong>
                     <span style="font-size:0.8rem; color:var(--text-muted);">buba-s-projects1@gmail.com</span>
                 </div>
             </div>
             <div class="google-account-select-box" onclick="selectGoogleAccount('Игорь Скотников', 'igor@dts.ru')">
                 <span class="material-symbols-rounded" style="font-size:32px; color:var(--primary-red)">account_circle</span>
                 <div style="text-align:left;">
-                    <strong style="font-size:0.9rem; display:block;">Игорь Скотников</strong>
+                    <strong style="font-size:0.9rem; display:block; color:#000;">Игорь Скотников</strong>
                     <span style="font-size:0.8rem; color:var(--text-muted);">igor@dts.ru</span>
                 </div>
             </div>
@@ -242,8 +243,9 @@
                 <div class="input-group"><label>Ваше Имя</label><input type="text" id="regName" placeholder="Алексей" required></div>
                 <div class="input-group"><label>Электронная почта</label><input type="email" id="regEmail" placeholder="alex@dts.ru" required></div>
                 <div class="input-group"><label>Придумайте пароль</label><input type="password" id="regPassword" placeholder="******" required></div>
+                <div style="height:10px;"></div>
                 <button type="submit" class="btn-submit">Зарегистрироваться</button>
-                <p style="font-size:0.9rem; margin-top:20px; color:var(--text-muted);">
+                <p style="font-size:0.9rem; margin-top:20px; color:var(--text-muted); text-align:center;">
                     Уже есть аккаунт? <a href="#" onclick="openLoginFromRegister(event)" style="color:var(--primary-red); font-weight:700; text-decoration:none;">Войти</a>
                 </p>
             </form>
@@ -267,7 +269,7 @@
         <div class="checkout-fields-container">
             <div class="input-group-sm">
                 <label>Улица доставки (Уссурийск)</label>
-                <select id="deliveryStreet">
+                <select id="deliveryStreet" style="width:100%; padding:10px; border:1px solid #e8eaed; border-radius:8px;">
                     <option value="Фестивальная зона ДТС">Фестивальная зона ДТС (Самовывоз)</option>
                     <option value="ул. Ленина">ул. Ленина (Доставка курьером)</option>
                     <option value="ул. Некрасова">ул. Некрасова (Доставка курьером)</option>
@@ -277,7 +279,7 @@
             </div>
             <div class="input-group-sm" style="margin-top: 10px;">
                 <label>Способ оплаты</label>
-                <select id="paymentType">
+                <select id="paymentType" style="width:100%; padding:10px; border:1px solid #e8eaed; border-radius:8px;">
                     <option value="Банковская карта онлайн">Банковская карта онлайн</option>
                     <option value="Система быстрых платежей (СБП)">Система быстрых платежей (СБП)</option>
                     <option value="Наличными при получении">Наличными при получении</option>
