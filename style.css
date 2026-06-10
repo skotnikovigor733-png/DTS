@@ -16,7 +16,6 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 /* Навбар */
 .dts-nav { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); position: fixed; top: 0; width: 100%; z-index: 100; }
 .nav-container { max-width: 1200px; margin: 0 auto; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
-.logo-area { display: flex; align-items: center; gap: 12px; }
 .logo-text { font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; }
 .nav-links { display: flex; gap: 4px; }
 .nav-item { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 8px 18px; border-radius: 24px; transition: var(--transition); }
@@ -46,10 +45,10 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 .btn-secondary:hover { background-color: #e8eaed; }
 
 /* Кнопка Google Auth */
-.btn-google-auth { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; border: 1px solid #dadce0; background: #fff; color: #3c4043; padding: 12px; border-radius: 100px; font-family: inherit; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: var(--transition); margin-bottom: 10px; }
-.btn-google-auth:hover { background: #f8f9fa; border-color: #dee2e6; }
+.btn-google-auth { display: flex; align-items: center; justify-content: center; width: 100%; border: 1px solid #dadce0; background: #fff; color: #3c4043; padding: 12px; border-radius: 100px; font-family: inherit; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: var(--transition); margin-bottom: 10px; }
+.btn-google-auth:hover { background: #f8f9fa; }
 .google-account-select-box { display: flex; align-items: center; gap: 14px; padding: 12px; border-radius: 12px; border: 1px solid #e8eaed; margin-bottom: 10px; cursor: pointer; transition: var(--transition); }
-.google-account-select-box:hover { background: #f8f9fa; border-color: #cccccc; }
+.google-account-select-box:hover { background: #f8f9fa; border-color: #da291c; }
 
 /* Ассортимент */
 .trucks-section { margin-top: 60px; margin-bottom: 60px; }
@@ -61,7 +60,6 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 .trucks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 .truck-card { background: var(--bg-white); border: 1px solid #e8eaed; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); }
 .truck-card:hover { transform: translateY(-4px); border-color: var(--primary-red); box-shadow: 0 12px 30px rgba(0,0,0,0.05); }
-.truck-badge { background: #f1f3f4; padding: 8px 16px; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
 .truck-content { padding: 24px; display: flex; flex-direction: column; flex: 1; text-align: left; }
 .truck-content h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; color: var(--text-black); }
 .truck-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px; flex: 1; line-height: 1.4; }
@@ -91,7 +89,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 .zone-btn.active span { color: var(--primary-red); }
 .zone-btn h4 { font-size: 1rem; font-weight: 700; }
 .zone-btn p { font-size: 0.8rem; color: var(--text-muted); }
-.map-details { background: #fff; border: 1px solid #e8eaed; border-radius: var(--radius-lg); padding: 32px; display: flex; flex-direction: column; justify-content: center; text-align: left; animation: fadeInZone 0.3s ease; }
+.map-details { background: #fff; border: 1px solid #e8eaed; border-radius: var(--radius-lg); padding: 32px; display: flex; flex-direction: column; justify-content: center; text-align: left; }
 .badge-materials { background: rgba(218,41,28,0.08); color: var(--primary-red); padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; align-self: flex-start; margin-bottom: 12px; }
 
 /* Билеты */
@@ -99,7 +97,6 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 .input-group, .input-group-sm { display: flex; flex-direction: column; gap: 6px; text-align: left; margin-bottom: 12px; }
 .input-group label, .input-group-sm label { font-size: 0.85rem; font-weight: 600; }
 .input-group input, .input-group select, .input-group textarea { border: 1px solid #e8eaed; padding: 12px 16px; border-radius: 12px; font-family: inherit; font-size: 0.95rem; outline: none; background: #fff; width: 100%; }
-.input-group input:focus, .input-group textarea:focus { border-color: var(--primary-red); }
 .btn-submit { background: var(--surface-dark); color: #fff; border: none; padding: 14px; border-radius: 100px; width: 100%; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: var(--transition); font-family: inherit; font-size: 1rem; }
 .btn-submit:hover { background: var(--primary-red); }
 .ticket-card-ghost { border: 2px dashed #e8eaed; border-radius: 24px; min-height: 250px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #fff; }
@@ -117,15 +114,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 .review-item { background: #fff; border: 1px solid #e8eaed; border-radius: 16px; padding: 16px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.01); }
 .review-meta { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; }
 
-/* Кабинет */
-.account-grid { display: grid; grid-template-columns: 1fr 2.5fr; gap: 32px; margin-top: 24px; }
-.account-info-card { background: var(--surface-light); border: 1px solid #e8eaed; border-radius: 24px; padding: 32px; text-align: center; height: fit-content; }
-.account-avatar { font-size: 72px !important; color: var(--text-muted); margin-bottom: 12px; }
-.account-data-card { background: #fff; border: 1px solid #e8eaed; border-radius: 24px; padding: 32px; text-align: left; }
-.orders-list { margin-top: 15px; display: flex; flex-direction: column; gap: 12px; }
-.order-item-history { background: var(--surface-light); padding: 16px; border-radius: 16px; border: 1px solid #e8eaed; display: flex; justify-content: space-between; align-items: center; }
-
-/* Корзина Сайдбар */
+/* Сайдбар */
 .cart-sidebar { position: fixed; top: 0; right: -400px; width: 100%; max-width: 400px; height: 100%; background: #fff; box-shadow: -10px 0 30px rgba(0,0,0,0.05); z-index: 500; transition: var(--transition); display: flex; flex-direction: column; padding: 24px; border-left: 1px solid #e8eaed; }
 .cart-sidebar.active { right: 0; }
 .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e8eaed; padding-bottom: 16px; }
@@ -140,7 +129,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 .cart-footer { border-top: 1px solid #e8eaed; padding-top: 12px; }
 .cart-total { display: flex; justify-content: space-between; font-weight: 800; font-size: 1.1rem; margin-bottom: 12px; }
 
-/* Модалка */
+/* Модалки */
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 1000; display: none; }
 .google-modal { background: #fff; padding: 32px; border-radius: 24px; width: 100%; max-width: 400px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); text-align: center; position: relative; }
 .close-modal { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); }
@@ -149,6 +138,5 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .hero-title { font-size: 2.8rem; }
-    .map-container, .booking-container, .account-grid, .reviews-container, .interesting-grid { grid-template-columns: 1fr; }
-    .dts-countdown { flex-wrap: wrap; }
+    .map-container, .booking-container, .interesting-grid { grid-template-columns: 1fr; }
 }
