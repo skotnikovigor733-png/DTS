@@ -50,7 +50,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-
 .btn-google-auth { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; border: 1px solid #dadce0; background: #fff; color: #3c4043; padding: 12px; border-radius: 100px; font-family: inherit; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: var(--transition); }
 .btn-google-auth:hover { background: #f8f9fa; border-color: #dee2e6; }
 .google-account-select-box { display: flex; align-items: center; gap: 14px; padding: 12px; border-radius: 12px; border: 1px solid #e8eaed; margin-bottom: 10px; cursor: pointer; transition: var(--transition); }
-.google-account-select-box:hover { background: #f8f9fa; border-color: #cc; }
+.google-account-select-box:hover { background: #f8f9fa; border-color: #cccccc; }
 
 /* Ассортимент */
 .trucks-section { margin-top: 60px; margin-bottom: 60px; }

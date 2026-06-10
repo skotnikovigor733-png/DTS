@@ -1,39 +1,33 @@
 const menuProducts = [
     // === ГРИЛЬ & BBQ ===
-    { id: 1, category: "grill", title: "Стейк «Прораб»", desc: "Премиальная мраморная говядина на мощном гриле.", price: 450, img: "https://images.deliveryclub.ru/st/services_core/product_photos/fdf50cfdf39fbdc1979314972f10b00c.jpg" },
-    { id: 2, category: "grill", title: "Ребра «Арматурные»", desc: "Свиные ребрышки тактического копчения в соусе барбекю.", price: 520, img: "https://images.deliveryclub.ru/st/services_core/product_photos/54bba89196b025b3ba019f67a21ca7ee.jpg" },
-    { id: 3, category: "grill", title: "Колбаски «Индустриальные»", desc: "Шашлычные колбаски со специями и дымком.", price: 410, img: "https://images.deliveryclub.ru/st/services_core/product_photos/ce9ee1dbb4d08151745db7bbbf9199d7.jpg" },
-    { id: 4, category: "grill", title: "Шашлык «Железобетонный»", desc: "Классический сочный свиной шашлык на углях с луком.", price: 380, img: "https://images.deliveryclub.ru/st/services_core/product_photos/5112fa72cb6d860df8374a2cb58801d9.jpg" },
+    { id: 1, category: "grill", title: "Стейк «Прораб»", desc: "Премиальная мраморная говядина на мощном гриле.", price: 450 },
+    { id: 2, category: "grill", title: "Ребра «Арматурные»", desc: "Свиные ребрышки тактического копчения в соусе барбекю.", price: 520 },
+    { id: 3, category: "grill", title: "Колбаски «Индустриальные»", desc: "Шашлычные колбаски со специями и дымком.", price: 410 },
+    { id: 4, category: "grill", title: "Шашлык «Железобетонный»", desc: "Классический сочный свиной шашлык на углях с луком.", price: 380 },
 
     // === БУРГЕРЫ ===
-    { id: 5, category: "burgers", title: "Бургер «Фундаментальный»", desc: "Двойная котлета, сыр чеддер, авторский соус на черной булке.", price: 390, img: "https://images.deliveryclub.ru/st/services_core/product_photos/38b14e08285bd5e2ad6be504ec8773e1.jpg" },
-    { id: 6, category: "burgers", title: "Чикен-Лофт Бургер", desc: "Куриное филе в хрустящей панировке, майонез, салат.", price: 320, img: "https://images.deliveryclub.ru/st/services_core/product_photos/67ef089cfeb395b0c958d43806a5ba1e.jpg" },
-    { id: 7, category: "burgers", title: "Мега-Бургер «Бетон»", desc: "Огромный трехэтажный бургер для истинных строителей.", price: 590, img: "https://images.deliveryclub.ru/st/services_core/product_photos/3cb5443217cb0c749b5cfaee90899017.jpg" },
-    { id: 8, category: "burgers", title: "Острый «Калибр»", desc: "Огненный бургер с перцем халапеньо и соусом чили.", price: 360, img: "https://images.deliveryclub.ru/st/services_core/product_photos/8be6b7e6b06da8d1979ad2bb3a726615.jpg" },
+    { id: 5, category: "burgers", title: "Бургер «Фундаментальный»", desc: "Двойная котлета, сыр чеддер, авторский соус на черной булке.", price: 390 },
+    { id: 6, category: "burgers", title: "Чикен-Лофт Бургер", desc: "Куриное филе в хрустящей панировке, майонез, салат.", price: 320 },
+    { id: 7, category: "burgers", title: "Мега-Бургер «Бетон»", desc: "Огромный трехэтажный бургер для истинных строителей.", price: 590 },
+    { id: 8, category: "burgers", title: "Острый «Калибр»", desc: "Огненный бургер с перцем халапеньо и соусом чили.", price: 360 },
 
     // === ПИЦЦА & ВЫПЕЧКА ===
-    { id: 9, category: "pizza", title: "Пицца «Кирпич-Пепперони»", desc: "Острая колбаса пепперони, много моцареллы, томатный соус.", price: 490, img: "https://images.deliveryclub.ru/st/services_core/product_photos/4c67eb0a0680183f3e1b09b53adcb1a9.jpg" },
-    { id: 10, category: "pizza", title: "Пицца «4 Металла»", desc: "Четыре изысканных сыра на тонком хрустящем тесте.", price: 510, img: "https://images.deliveryclub.ru/st/services_core/product_photos/6910609335ef00a5d62688f8d672909f.jpg" },
-    { id: 11, category: "pizza", title: "Пицца «Мастерок»", desc: "Домашняя пицца с ветчиной, грибами и зеленью.", price: 460, img: "https://images.deliveryclub.ru/st/services_core/product_photos/148ff6a0efbf27e89139cb801f9e2051.jpg" },
-    { id: 12, category: "pizza", title: "Чесночный багет ДТС", desc: "Свежевыпеченный багет с ароматным чесночным маслом.", price: 140, img: "https://images.deliveryclub.ru/st/services_core/product_photos/ef4ba9a263d9021873fbfe819dbbfb2c.jpg" },
+    { id: 9, category: "pizza", title: "Пицца «Кирпич-Пепперони»", desc: "Острая колбаса пепперони, много моцареллы, томатный соус.", price: 490 },
+    { id: 10, category: "pizza", title: "Пицца «4 Металла»", desc: "Четыре изысканных сыра на тонком хрустящем тесте.", price: 510 },
+    { id: 11, category: "pizza", title: "Пицца «Мастерок»", desc: "Домашняя пицца с ветчиной, грибами и зеленью.", price: 460 },
+    { id: 12, category: "pizza", title: "Чесночный багет ДТС", desc: "Свежевыпеченный багет с ароматным чесночным маслом.", price: 140 },
 
     // === ДЕСЕРТЫ ===
-    { id: 13, category: "desserts", title: "Пончик «Монтажная пена»", desc: "Нежный донат со сливочной глазурью и посыпкой.", price: 110, img: "https://images.deliveryclub.ru/st/services_core/product_photos/a0d1e57c60ee1dfba7a06692996d9145.jpg" },
-    { id: 14, category: "desserts", title: "Торт «Шоколадный Уровень»", desc: "Многослойный шоколадный бисквит с насыщенным крем-чизом.", price: 210, img: "https://images.deliveryclub.ru/st/services_core/product_photos/0410ff9be0ba80db50fc7b057fc46b62.jpg" },
-    { id: 15, category: "desserts", title: "Чизкейк «Шпаклевка»", desc: "Классический нью-йоркский нежный творожный десерт.", price: 190, img: "https://images.deliveryclub.ru/st/services_core/product_photos/7cb97ee3e3ee41005ca7b7dfb814a0f4.jpg" },
-    { id: 16, category: "desserts", title: "Вафли «Опалубка»", desc: "Бельгийские рифленые вафли с карамельным топпингом.", price: 160, img: "https://images.deliveryclub.ru/st/services_core/product_photos/0bc6619ee4b568393e5066601b0b467e.jpg" },
+    { id: 13, category: "desserts", title: "Пончик «Монтажная пена»", desc: "Нежный донат со сливочной глазурью и посыпкой.", price: 110 },
+    { id: 14, category: "desserts", title: "Торт «Шоколадный Уровень»", desc: "Многослойный шоколадный бисквит с насыщенным крем-чизом.", price: 210 },
+    { id: 15, category: "desserts", title: "Чизкейк «Шпаклевка»", desc: "Классический нью-йоркский нежный творожный десерт.", price: 190 },
+    { id: 16, category: "desserts", title: "Вафли «Опалубка»", desc: "Бельгийские рифленые вафли с карамельным топпингом.", price: 160 },
 
     // === НАПИТКИ ===
-    { id: 17, category: "drinks", title: "Лимонад «Энергетик ДТС»", desc: "Бодрящий газированный цитрусовый микс.", price: 150, img: "https://images.deliveryclub.ru/st/services_core/product_photos/b6199aef509747970cc52b757e9373e9.jpg" },
-    { id: 18, category: "drinks", title: "Холодный Кофе «Сварщик»", desc: "Тонизирующий айс-латте с карамельным сиропом.", price: 180, img: "https://images.deliveryclub.ru/st/services_core/product_photos/32b0ea2d9bf877f80590fa4d17366367.jpg" },
-    { id: 19, category: "drinks", title: "Крафтовый Квас ДТС", desc: "Натуральный резвый квас на ржаном хлебе.", price: 120, img: "https://images.deliveryclub.ru/st/services_core/product_photos/4c029a67a0a6eb9dfebaa896191b9200.jpg" },
-    { id: 20, category: "drinks", title: "Горячий Чай «Анкер»", desc: "Крепкий черный листовой чай с бергамотом и лимоном.", price: 90, img: "https://images.deliveryclub.ru/st/services_core/product_photos/9d63c58beeb77395ee2bb33f95478440.jpg" },
-    
-    // === ДОПОЛНИТЕЛЬНОЕ НАПОЛНЕНИЕ ===
-    { id: 21, category: "street", title: "Лапша WOK «Сварка»", desc: "Острая пшеничная лапша с овощами и курицей.", price: 350, img: "https://images.deliveryclub.ru/st/services_core/product_photos/31f0cf8762580df042b5cb3848e100e4.jpg" },
-    { id: 22, category: "pizza", title: "Мини-пицца «Детская»", desc: "Сырная пицца небольшого диаметра с сосисками.", price: 250, img: "https://images.deliveryclub.ru/st/services_core/product_photos/35762c2f6dff44d03dfcf68749a0378b.jpg" },
-    { id: 23, category: "desserts", title: "Круассан Французский", desc: "Слоеная воздушная выпечка с начинкой из сгущенки.", price: 130, img: "https://images.deliveryclub.ru/st/services_core/product_photos/27909c00b09424619d08e9ca59691b09.jpg" },
-    { id: 24, category: "grill", title: "Овощи на гриле ДТС", desc: "Болгарский перец, баклажаны и томаты с соусом песто.", price: 290, img: "https://images.deliveryclub.ru/st/services_core/product_photos/a08ff8b81db87b1c1e5504ef5164bc41.jpg" }
+    { id: 17, category: "drinks", title: "Лимонад «Энергетик ДТС»", desc: "Бодрящий газированный цитрусовый микс.", price: 150 },
+    { id: 18, category: "drinks", title: "Холодный Кофе «Сварщик»", desc: "Тонизирующий айс-латте с карамельным сиропом.", price: 180 },
+    { id: 19, category: "drinks", title: "Крафтовый Квас ДТС", desc: "Натуральный резвый квас на ржаном хлебе.", price: 120 },
+    { id: 20, category: "drinks", title: "Горячий Чай «Анкер»", desc: "Крепкий черный листовой чай с бергамотом и лимоном.", price: 90 }
 ];
 
 let cart = [];
@@ -51,18 +45,15 @@ window.onload = function() {
 
 function navigateTo(pageId) {
     const sections = ['hero', 'timer-module', 'menu-section', 'map', 'interesting', 'booking', 'reviews-section', 'account-section'];
-    
     sections.forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = (id === pageId) ? 'block' : 'none';
     });
 
     if (pageId === 'hero') {
-        document.getElementById('timer-module').style.display = 'block';
-        document.getElementById('map').style.display = 'block';
-        document.getElementById('interesting').style.display = 'block';
-        document.getElementById('booking').style.display = 'block';
-        document.getElementById('reviews-section').style.display = 'block';
+        ['timer-module', 'map', 'interesting', 'booking', 'reviews-section'].forEach(id => {
+            document.getElementById(id).style.display = 'block';
+        });
     }
 
     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -71,25 +62,29 @@ function navigateTo(pageId) {
     if (pageId === 'map') document.getElementById('nav-map').classList.add('active');
     if (pageId === 'reviews-section') document.getElementById('nav-reviews').classList.add('active');
     if (pageId === 'account-section' && document.getElementById('nav-account')) document.getElementById('nav-account').classList.add('active');
-    
     window.scrollTo(0, 0);
 }
 
-document.getElementById('nav-hero').onclick = function(e) { e.preventDefault(); navigateTo('hero'); };
-document.getElementById('nav-menu').onclick = function(e) { e.preventDefault(); navigateTo('menu-section'); };
-document.getElementById('nav-map').onclick = function(e) { e.preventDefault(); navigateTo('map'); };
-document.getElementById('nav-reviews').onclick = function(e) { e.preventDefault(); navigateTo('reviews-section'); };
-document.getElementById('nav-account').onclick = function(e) { e.preventDefault(); navigateTo('account-section'); };
-
+// ФУНКЦИЯ РЕНДЕРИНГА КАРТОЧЕК С ИКОНКАМИ И ГРАДИЕНТАМИ
 function renderMenu(category) {
     const grid = document.getElementById('menuGrid');
     if (!grid) return; grid.innerHTML = '';
     const filtered = menuProducts.filter(p => category === 'all' || p.category === category);
+    
+    const categoryIcons = {
+        grill: { icon: "flatware", bg: "linear-gradient(135deg, #da291c, #991f16)" },
+        burgers: { icon: "lunch_dining", bg: "linear-gradient(135deg, #111111, #333333)" },
+        pizza: { icon: "local_pizza", bg: "linear-gradient(135deg, #ff9900, #cc6600)" },
+        desserts: { icon: "cake", bg: "linear-gradient(135deg, #e06666, #b63a3a)" },
+        drinks: { icon: "local_bar", bg: "linear-gradient(135deg, #3cc157, #1e7e34)" }
+    };
+
     filtered.forEach(p => {
+        const styleData = categoryIcons[p.category] || { icon: "restaurant", bg: "linear-gradient(135deg, #5f6368, #3c4043)" };
         grid.innerHTML += `
             <div class="truck-card">
-                <div style="height: 170px; overflow: hidden; background:#f1f3f4;">
-                    <img src="${p.img}" style="width: 100%; height: 100%; object-fit: cover;" alt="${p.title}">
+                <div style="height: 170px; background: ${styleData.bg}; display: flex; align-items: center; justify-content: center; color: white;">
+                    <span class="material-symbols-rounded" style="font-size: 64px; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2));">${styleData.icon}</span>
                 </div>
                 <div class="truck-content">
                     <h3>${p.title}</h3>
@@ -112,14 +107,12 @@ function updateCartUI() {
     document.getElementById('cartCount').innerText = cart.length;
     const itemsContainer = document.getElementById('cartItems');
     if(!itemsContainer) return; itemsContainer.innerHTML = '';
-    
     let total = 0;
     cart.forEach((item, idx) => { total += item.price; itemsContainer.innerHTML += `<div class="cart-item"><div><strong>${item.title}</strong><p>${item.price} ₽</p></div><button onclick="removeFromCart(${idx})" style="background:none; border:none; color:var(--primary-red); cursor:pointer;">&times;</button></div>`; });
     
     const timeText = document.getElementById('estimatedTimeText');
     if (cart.length === 0) { timeText.innerText = "Корзина пуста"; } 
     else { const minTime = 15 + (cart.length * 4); const maxTime = 25 + (cart.length * 4); timeText.innerText = `Время ожидания: ${minTime}-${maxTime} мин.`; }
-
     let finalSum = total - (total * (discountValue / 100));
     document.getElementById('cartTotalSum').innerText = Math.round(finalSum) + ' ₽';
 }
@@ -181,28 +174,19 @@ function renderReviews() {
     });
 }
 
-// МОДАЛКИ И ИМИТАЦИЯ GOOGLE AUTH
 function openModal(modalId) { const m = document.getElementById(modalId); if (m) m.style.display = 'flex'; }
+// Изменили название, чтобы не конфликтовать со стандартными методами браузера
 function closeModal(modalId) { const m = document.getElementById(modalId); if (m) m.style.display = 'none'; }
 function toggleAuthModal() { openModal('loginModal'); }
 function openRegisterFromLogin(e) { e.preventDefault(); closeModal('loginModal'); openModal('registerModal'); }
 function openLoginFromRegister(e) { e.preventDefault(); closeModal('registerModal'); openModal('loginModal'); }
 
-// Логика вызова фейкового окна Google Accounts
-function triggerGoogleMock() {
-    closeModal('loginModal');
-    openModal('googleMockModal');
-}
+function triggerGoogleMock() { closeModal('loginModal'); openModal('googleMockModal'); }
 
-// Клик по выбранному Google-аккаунту
 function selectGoogleAccount(name, email) {
     currentUser = { name: name, email: email };
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    
-    closeModal('googleMockModal');
-    updateAuthUI();
-    renderAccountData();
-    navigateTo('account-section');
+    closeModal('googleMockModal'); updateAuthUI(); renderAccountData(); navigateTo('account-section');
     alert(`Успешный вход через Google ID как ${name}!`);
 }
 
@@ -252,7 +236,6 @@ function generateTicket(e) {
     renderAccountData();
 }
 
-// ТАЙМЕР И КАРТА
 const targetDate = new Date("Aug 1, 2026 00:00:00").getTime();
 function updateCountdown() {
     const now = new Date().getTime(); const diff = targetDate - now;
