@@ -13,8 +13,7 @@
     <nav class="dts-nav">
         <div class="nav-container">
             <div class="logo-area" onclick="navigateTo('hero')" style="cursor:pointer;">
-                <img src="logo.png" alt="ДТС Лого" class="dts-logo-img" onerror="this.style.display='none'">
-                <span class="logo-text">FoodFest</span>
+                <span class="logo-text">DTS FoodFest</span>
             </div>
             <div class="nav-links">
                 <a href="#" class="nav-item active" id="nav-hero">Главная</a>
@@ -39,11 +38,11 @@
             <div class="hero-badge">
                 <span class="material-symbols-rounded">construction</span> Инновации Дальторгсервис
             </div>
-            <h1 class="hero-title">DTS <span class="text-red">F<span style="color:var(--primary-red)">o</span>odFest</span></h1>
+            <h1 class="hero-title">DTS <span class="text-red">FoodFest</span></h1>
             <p class="hero-subtitle">Интеллектуальная экосистема доставки еды и экспресс-заказов</p>
             <div class="cta-group">
                 <button class="btn-primary" onclick="navigateTo('menu-section')">Заказать еду онлайн</button>
-                <button class="btn-secondary" onclick="navigateTo('hero'); window.location.href='#interesting';">Гастро-Гид ДТС</button>
+                <button class="btn-secondary" onclick="document.getElementById('interesting').scrollIntoView({behavior: 'smooth'});">Гастро-Гид ДТС</button>
             </div>
         </section>
 
@@ -92,7 +91,7 @@
             </div>
         </section>
 
-        <section id="interesting" class="interesting-section" style="margin-top: 60px; margin-bottom: 60px;">
+        <section id="interesting" class="interesting-section">
             <h2 class="section-title">Гастро-Гид <span class="text-red">«Дальторгсервис»</span></h2>
             <p class="section-subtitle">Технологии строительства на службе уличной кулинарии</p>
             <div class="interesting-grid">
@@ -133,7 +132,7 @@
             </div>
         </section>
 
-        <section id="reviews-section" class="reviews-section" style="margin-top: 60px; margin-bottom: 60px;">
+        <section id="reviews-section" class="reviews-section">
             <h2 class="section-title">Отзывы <span class="text-red">Посетителей</span></h2>
             <p class="section-subtitle">Оцените качество обслуживания и скорость доставки еды</p>
             
@@ -185,9 +184,9 @@
 
     <div class="modal-overlay" id="loginModal">
         <div class="google-modal">
-            <button class="close-modal" onclick="closeModal('loginModal')">&times;</button>
+            <button class="close-modal" onclick="toggleAuthModal()">&times;</button>
             <div class="modal-header">
-                <h2>Вход в DTS ID</h2>
+                <h2 style="margin-bottom: 20px;">Вход в DTS ID</h2>
             </div>
             
             <button class="btn-google-auth" onclick="triggerGoogleMock()">
@@ -211,10 +210,10 @@
 
     <div class="modal-overlay" id="googleMockModal" style="z-index: 2000;">
         <div class="google-modal" style="max-width: 360px; padding: 24px;">
-            <button class="close-modal" onclick="closeModal('googleMockModal')">&times;</button>
+            <button class="close-modal" onclick="closeGoogleMock()">&times;</button>
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" style="height:24px; margin-bottom:16px;">
             <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:4px;">Вход с помощью Google</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Выберете аккаунт для перехода в приложение DTS FoodFest</p>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Выберите аккаунт для перехода в приложение DTS FoodFest</p>
             
             <div class="google-account-select-box" onclick="selectGoogleAccount('Buba', 'buba-s-projects1@gmail.com')">
                 <span class="material-symbols-rounded" style="font-size:32px; color:var(--text-muted)">account_circle</span>
@@ -235,7 +234,7 @@
 
     <div class="modal-overlay" id="registerModal">
         <div class="google-modal">
-            <button class="close-modal" onclick="closeModal('registerModal')">&times;</button>
+            <button class="close-modal" onclick="closeRegisterModal()">&times;</button>
             <div class="modal-header">
                 <h2>Создать аккаунт</h2>
             </div>
