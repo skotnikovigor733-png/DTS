@@ -3,332 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DTS FoodFest — Доставка еды и билеты</title>
+    <title>ЗАЖЕВО — Гастрономический фестиваль 2026</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Permanent+Marker&family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="dts-nav">
-        <div class="nav-container">
-            <div class="logo-area" onclick="navigateTo('hero')" style="cursor:pointer; display: flex; align-items: center; gap: 8px;">
-                <img src="logo.png" alt="ДТС Лого" style="height: 38px; width: auto; object-fit: contain;">
-                <span class="logo-text">DTS FoodFest</span>
-            </div>
-            <div class="nav-links">
-                <a href="#" class="nav-item active" id="nav-hero">Главная</a>
-                <a href="#" class="nav-item" id="nav-menu">Ассортимент</a>
-                <a href="#" class="nav-item" id="nav-map">Карта зон</a>
-                <a href="#" class="nav-item" id="nav-reviews">Отзывы</a>
-                <a href="#" class="nav-item" id="nav-account" style="display:none;">Личный кабинет</a>
-            </div>
-            <div class="nav-actions">
-                <button class="btn-cart" onclick="toggleCart()">
-                    <span class="material-symbols-rounded">shopping_cart</span>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-                <button class="btn-primary-sm" id="authBtn" onclick="toggleAuthModal()">Войти</button>
-            </div>
-        </div>
-    </nav>
-
-    <main class="content-wrapper">
-        
-        <section id="hero" class="hero-section">
-            <div class="hero-badge">
-                <span class="material-symbols-rounded">construction</span> Инновации Дальторгсервис
-            </div>
-            <h1 class="hero-title">DTS <span class="text-red">FoodFest</span></h1>
-            <p class="hero-subtitle">Интеллектуальная экосистема доставки еды и экспресс-заказов</p>
-            <div class="cta-group">
-                <button class="btn-primary" onclick="navigateTo('menu-section')">Заказать еду онлайн</button>
-                <button class="btn-secondary" onclick="document.getElementById('interesting').scrollIntoView({behavior: 'smooth'});">Гастро-Гид ДТС</button>
-            </div>
-        </section>
-
-        <section id="timer-module" class="info-module">
-            <div class="card timer-card">
-                <div class="card-header"><span class="material-symbols-rounded icon-red">schedule</span><h3>До старта фестиваля</h3></div>
-                <div id="countdown" class="dts-countdown">
-                    <div class="time-seg"><span id="days">00</span><label>дней</label></div>
-                    <div class="time-seg"><span id="hours">00</span><label>часов</label></div>
-                    <div class="time-seg"><span id="minutes">00</span><label>минут</label></div>
-                    <div class="time-seg"><span id="seconds">00</span><label>секунд</label></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="menu-section" class="trucks-section">
-            <h2 class="section-title">Ассортимент <span class="text-red">и Меню</span></h2>
-            <p class="section-subtitle">Кликните на карточку для подробного просмотра блюда</p>
-
-            <div class="filter-group">
-                <button class="chip active" onclick="filterCategory('all', event)">Все</button>
-                <button class="chip" onclick="filterCategory('grill', event)">Гриль & BBQ</button>
-                <button class="chip" onclick="filterCategory('burgers', event)">Бургеры</button>
-                <button class="chip" onclick="filterCategory('pizza', event)">Пицца & Выпечка</button>
-                <button class="chip" onclick="filterCategory('desserts', event)">Десерты</button>
-                <button class="chip" onclick="filterCategory('drinks', event)">Напитки</button>
-            </div>
-
-            <div class="trucks-grid" id="menuGrid">
-                </div>
-        </section>
-
-        <section id="map" class="map-section">
-            <h2 class="section-title">Карта локаций <span class="text-red">DTS</span></h2>
-            <div class="map-container">
-                <div class="map-zones">
-                    <div class="zone-btn active" onclick="switchZone('stage', this)"><span class="material-symbols-rounded">theater_comedy</span><div><h4>Главная сцена</h4><p>Индустриальный лофт</p></div></div>
-                    <div class="zone-btn" onclick="switchZone('food', this)"><span class="material-symbols-rounded">lunch_dining</span><div><h4>Гастро-аллея</h4><p>Фуд-траки и маркет</p></div></div>
-                    <div class="zone-btn" onclick="switchZone('lounge', this)"><span class="material-symbols-rounded">chair</span><div><h4>Лаунж-зона ДТС</h4><p>Пространство отдыха</p></div></div>
-                </div>
-                <div class="map-details" id="zoneDetails">
-                    <div class="badge-materials">Материалы: Металлоконструкции ДТС</div>
-                    <h3>Главная сцена DTS Stage</h3>
-                    <p>Центральная точка фестиваля, собранная из прочных металлоконструкций компании Дальторгсервис.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="interesting" class="interesting-section">
-            <h2 class="section-title">Гастро-Гид <span class="text-red">«Дальторгсервис»</span></h2>
-            <p class="section-subtitle">Технологии строительства на службе уличной кулинарии</p>
-            <div class="interesting-grid">
-                <div class="interesting-card">
-                    <span class="material-symbols-rounded icon-red">thermostat</span>
-                    <h4>Теплоизоляция блюд</h4>
-                    <p>Для сохранения сочности стейков наши фуд-траки используют термобоксы, изолированные базальтовой ватой повышенной плотности из ассортимента ДТС.</p>
-                </div>
-                <div class="interesting-card">
-                    <span class="material-symbols-rounded icon-red">local_shipping</span>
-                    <h4>Умная логистика</h4>
-                    <p>Курьерская служба распределяет заказы по секторам фестивальной зоны, используя координатную сетку строительного плана объекта.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="booking" class="booking-section">
-            <h2 class="section-title">Электронные <span class="text-red">Билеты</span></h2>
-            <div class="booking-container">
-                <div class="booking-form-side">
-                    <form id="ticketForm" onsubmit="generateTicket(event)">
-                        <div class="input-group"><label>Ваше имя</label><input type="text" id="userName" placeholder="Иван Иванов" required></div>
-                        <div class="input-group"><label>E-mail</label><input type="email" id="userEmail" placeholder="example@mail.ru" required></div>
-                        <div class="input-group"><label>Зона доступа</label>
-                            <select id="ticketType">
-                                <option value="Стандарт">Стандарт — 0 ₽</option>
-                                <option value="VIP Прораб">VIP Прораб — 1500 ₽</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-submit"><span class="material-symbols-rounded">qr_code_scanner</span>Оформить билет</button>
-                    </form>
-                </div>
-                <div class="booking-ticket-side">
-                    <div id="ticketResult" class="ticket-card-ghost">
-                        <div class="ghost-message"><span class="material-symbols-rounded icon-huge">confirmation_number</span><p>Билет отобразится здесь и сохранится в личном кабинете</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="reviews-section" class="reviews-section">
-            <h2 class="section-title">Отзывы <span class="text-red">Посетителей</span></h2>
-            <p class="section-subtitle">Оцените качество обслуживания и скорость доставки еды</p>
-            
-            <div class="reviews-container">
-                <div class="review-form-card">
-                    <h3>Оставить отзыв</h3>
-                    <form id="reviewForm" onsubmit="addReview(event)">
-                        <div class="input-group"><label>Ваше имя</label><input type="text" id="reviewAuthor" placeholder="Игорь С." required></div>
-                        <div class="input-group">
-                            <label>Оценка</label>
-                            <select id="reviewRating">
-                                <option value="5">⭐⭐⭐⭐⭐ (Отлично)</option>
-                                <option value="4">⭐⭐⭐⭐ (Хорошо)</option>
-                                <option value="3">⭐⭐ (Удовлетворительно)</option>
-                            </select>
-                        </div>
-                        <div class="input-group"><label>Комментарий</label><textarea id="reviewText" rows="3" placeholder="Доставка супер, бургер горячий!" required></textarea></div>
-                        <div style="height:10px;"></div>
-                        <button type="submit" class="btn-submit">Опубликовать</button>
-                    </form>
-                </div>
-
-                <div class="reviews-display-card">
-                    <h3>Стена отзывов</h3>
-                    <div id="reviewsList" class="reviews-list-scroll">
-                        </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="account-section" class="account-section" style="display:none;">
-            <h2 class="section-title">Личный кабинет <span class="text-red">Клиента</span></h2>
-            <div class="account-grid">
-                <div class="account-info-card">
-                    <span class="material-symbols-rounded account-avatar">account_circle</span>
-                    <h3 id="profileName">Пользователь</h3>
-                    <p id="profileEmail">email@mail.ru</p>
-                    <button class="btn-secondary" onclick="logout()" style="margin-top:20px; width:100%;">Выйти из аккаунта</button>
-                </div>
-                <div class="account-data-card">
-                    <h3>Мои заказы еды</h3>
-                    <div id="ordersList" class="orders-list"><p class="text-muted">Вы еще не совершали заказов.</p></div>
-                    <h3 style="margin-top: 30px;">Мои билеты</h3>
-                    <div id="userTicketsList" class="orders-list"><p class="text-muted">У вас нет активных билетов.</p></div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <div class="modal-overlay" id="loginModal">
-        <div class="google-modal">
-            <button class="close-modal" onclick="toggleAuthModal()">&times;</button>
-            <div class="modal-header">
-                <h2 style="margin-bottom: 20px; font-size: 1.6rem; font-weight:800;">Вход в DTS ID</h2>
+    <header class="zazhevo-header">
+        <div class="header-container">
+            <div class="logo-area" onclick="scrollToBlock('hero')">
+                <svg class="logo-mouth" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 20 C 35 50, 65 50, 90 20 C 70 60, 30 60, 10 20 Z" fill="#E5533C" stroke="#1E1A17" stroke-width="4"/>
+                    <path d="M25 25 C 40 38, 60 38, 75 25" stroke="#FFF7F0" stroke-width="4" fill="none"/>
+                </svg>
+                <span class="logo-text">ЗАЖЕВО</span>
             </div>
             
-            <button class="btn-google-auth" onclick="triggerGoogleMock()">
-                <span style="margin-right:8px;">🌐</span>
-                Войти через Google
+            <button class="burger-menu" id="burgerBtn" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
             </button>
-            
-            <div style="margin: 15px 0; color: var(--text-muted); font-size: 0.85rem;">или используйте почту</div>
 
-            <form id="loginForm" onsubmit="login(event)">
-                <div class="input-group"><label>Электронная почта</label><input type="email" id="authEmail" value="admin@dts.ru" required></div>
-                <div class="input-group"><label>Пароль</label><input type="password" id="authPassword" value="123456" required></div>
-                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:15px; text-align:center;">Тест: admin@dts.ru / 123456</p>
-                <button type="submit" class="btn-submit">Войти</button>
-                <p style="font-size:0.9rem; margin-top:20px; color:var(--text-muted); text-align:center;">
-                    Ещё нет аккаунта? <a href="#" onclick="openRegisterFromLogin(event)" style="color:var(--primary-red); font-weight:700; text-decoration:none;">Зарегистрироваться</a>
-                </p>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about" onclick="menuLinkClick('about')">О фестивале</a>
+                <a href="#map-flavors" onclick="menuLinkClick('map-flavors')">Карта вкусов</a>
+                <a href="#navigation" onclick="menuLinkClick('navigation')">Навигация</a>
+                <a href="#merch" onclick="menuLinkClick('merch')">Мерч</a>
+                <a href="#partners" onclick="menuLinkClick('partners')">Партнёрам</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-block pattern-mouths">
+        <div class="hero-content">
+            <h1 class="main-title">ЗАЖЕВО</h1>
+            <p class="main-slogan">Жуй. Говори. Живи.</p>
+            <div class="hero-info">
+                <p class="hero-date">15–17 августа 2026</p>
+                <p class="hero-place">Парк имени XXX, Уссурийск</p>
+            </div>
+            <div class="hero-btns">
+                <button class="btn-zazhevo" onclick="scrollToBlock('navigation')">Карта фестиваля</button>
+                <button class="btn-zazhevo" onclick="scrollToBlock('partners')">Стать участником</button>
+            </div>
+        </div>
+        <div class="hero-mouth-art">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 40 C 70 110, 130 110, 180 40 C 150 130, 50 130, 20 40 Z" fill="#E5533C" stroke="#1E1A17" stroke-width="8" stroke-linejoin="round"/>
+                <path d="M50 50 C 80 80, 120 80, 150 50" stroke="#FFF7F0" stroke-width="6" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <div class="graffiti-divider"></div>
+
+    <section id="about" class="about-block">
+        <h2 class="block-title">О фестивале</h2>
+        <div class="about-container">
+            <p class="legend-text">Всё начинается с одного движения. Рот — это не просто способ поглощения пищи. Это главный инструмент нашей идентичности. Через него мы чувствуем взрывные вкусы уличной кулинарии, через него мы кричим о своей свободе, общаемся, спорим и любим. Фестиваль <span class="text-accent">«ЗАЖЕВО»</span> объединяет гастрономию и сильное городское комьюнити.</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Миссия</h3>
+                    <p>Зажечь гастрономическую культуру города, убрав скучные ресторанные рамки.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Ценности</h3>
+                    <p>Абсолютная свобода самовыражения, честные локальные продукты и сочный вкус.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="graffiti-divider"></div>
+
+    <section id="map-flavors" class="flavors-block alternate-bg">
+        <h2 class="block-title">Карта вкусов</h2>
+        <div class="cards-grid">
+            <div class="sticker-card card-red">
+                <div class="card-icon">👑</div>
+                <h3>Центр</h3>
+                <p>Эпицентр вкуса. Главные мясные хиты, стейки на гриле и флагманские фуд-траки фестиваля.</p>
+            </div>
+            <div class="sticker-card card-yellow">
+                <div class="card-icon">🏡</div>
+                <h3>Спальный район</h3>
+                <p>Уютная домашняя атмосфера. Локальная выпечка, крафтовый хлеб и семейные рецепты.</p>
+            </div>
+            <div class="sticker-card card-orange">
+                <div class="card-icon">🏭</div>
+                <h3>Промзона</h3>
+                <p>Индустриальный стрит-фуд. Острая азиатская лапша, бургеры «Бетон» и мощная крафтовая кухня.</p>
+            </div>
+            <div class="sticker-card card-green">
+                <div class="card-icon">🌊</div>
+                <h3>Набережная</h3>
+                <p>Свежесть и легкость. Освежающие лимонады, морепродукты, легкие десерты и блюда на пару.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="graffiti-divider"></div>
+
+    <section id="trucks" class="trucks-block pattern-mouths">
+        <h2 class="block-title">Участники</h2>
+        <div class="partners-logos">
+            <div class="truck-logo-item">🔥 МЯСОRУБКА</div>
+            <div class="truck-logo-item">⚡ СВАРКА-WOK</div>
+            <div class="truck-logo-item">🍕 КИРПИЧ-ПИЦЦА</div>
+            <div class="truck-logo-item">🍔 БЕТОН-БУРГЕР</div>
+            <div class="truck-logo-item">🍩 ПЕНА-ДОНАТС</div>
+            <div class="truck-logo-item">🥤 АНКЕР-ДРИНКС</div>
+        </div>
+    </section>
+
+    <div class="graffiti-divider"></div>
+
+    <section id="navigation" class="navigation-block">
+        <h2 class="block-title">Навигация</h2>
+        <div class="nav-zones-container">
+            <div class="zones-piktograms">
+                <div class="pikto-item"><span class="pikto-icon text-accent">👅</span><h4>Зона еды</h4></div>
+                <div class="pikto-item"><span class="pikto-icon text-green">🍺</span><h4>Барная зона</h4></div>
+                <div class="pikto-item"><span class="pikto-icon text-yellow">👕</span><h4>Маркет мерча</h4></div>
+                <div class="pikto-item"><span class="pikto-icon text-accent">👨‍🍳</span><h4>Лекторий / Кухня</h4></div>
+                <div class="pikto-item"><span class="pikto-icon text-green">🧸</span><h4>Детская зона</h4></div>
+                <div class="pikto-item"><span class="pikto-icon">💧</span><h4>Туалеты и вода</h4></div>
+            </div>
+            <div class="pdf-download-zone">
+                <a href="map.pdf" download class="btn-zazhevo btn-pdf">
+                    <span class="material-symbols-rounded">download</span> Скачать PDF-карту
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="graffiti-divider"></div>
+
+    <section id="merch" class="merch-block alternate-bg">
+        <h2 class="block-title">Мерч</h2>
+        <div class="cards-grid">
+            <div class="sticker-card merch-card">
+                <div class="merch-img-stub text-accent">👕</div>
+                <h3>Футболка «ЗАЖЕВО»</h3>
+                <p class="merch-price">1 500 ₽</p>
+            </div>
+            <div class="sticker-card merch-card">
+                <div class="merch-img-stub text-yellow">🧢</div>
+                <h3>Бейсболка Тракер</h3>
+                <p class="merch-price">900 ₽</p>
+            </div>
+            <div class="sticker-card merch-card">
+                <div class="merch-img-stub text-green">📦</div>
+                <h3>Экобокс Стритфудера</h3>
+                <p class="merch-price">1 200 ₽</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="graffiti-divider"></div>
+
+    <section id="partners" class="partners-block pattern-mouths">
+        <h2 class="block-title">Партнёрам</h2>
+        <div class="form-container">
+            <form id="partnerForm" onsubmit="handleFormSubmit(event)">
+                <div class="input-zazhevo">
+                    <label>Ваше имя</label>
+                    <input type="text" id="partnerName" required placeholder="Игорь">
+                </div>
+                <div class="input-zazhevo">
+                    <label>Email</label>
+                    <input type="email" id="partnerEmail" required placeholder="hello@mail.ru">
+                </div>
+                <div class="input-zazhevo">
+                    <label>Компания</label>
+                    <input type="text" id="partnerCompany" required placeholder="ООО Мегатрейд">
+                </div>
+                <div class="input-zazhevo">
+                    <label>Тип участия</label>
+                    <select id="participationType">
+                        <option value="фуд-трак">Фуд-трак</option>
+                        <option value="спонсор">Спонсор</option>
+                        <option value="волонтёр">Волонтёр</option>
+                        <option value="другое">Другое</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-zazhevo" style="width: 100%; margin-top: 20px;">Отправить заявку</button>
             </form>
         </div>
-    </div>
+    </section>
 
-    <div class="modal-overlay" id="googleMockModal" style="z-index: 2000;">
-        <div class="google-modal" style="max-width: 360px; padding: 24px;">
-            <button class="close-modal" onclick="closeGoogleMock()">&times;</button>
-            <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:4px;">Вход с помощью Google</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Выберите аккаунт для перехода в DTS FoodFest</p>
-            
-            <div class="google-account-select-box" onclick="selectGoogleAccount('Buba', 'buba-s-projects1@gmail.com')">
-                <span class="material-symbols-rounded" style="font-size:32px; color:var(--text-muted)">account_circle</span>
-                <div style="text-align:left;">
-                    <strong style="font-size:0.9rem; display:block; color:#000;">Buba</strong>
-                    <span style="font-size:0.8rem; color:var(--text-muted);">buba-s-projects1@gmail.com</span>
-                </div>
+    <footer class="zazhevo-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="logo-text">ЗАЖЕВО</span>
             </div>
-            <div class="google-account-select-box" onclick="selectGoogleAccount('Игорь Скотников', 'igor@dts.ru')">
-                <span class="material-symbols-rounded" style="font-size:32px; color:var(--primary-red)">account_circle</span>
-                <div style="text-align:left;">
-                    <strong style="font-size:0.9rem; display:block; color:#000;">Игорь Скотников</strong>
-                    <span style="font-size:0.8rem; color:var(--text-muted);">igor@dts.ru</span>
-                </div>
+            <div class="footer-contacts">
+                <a href="mailto:hello@zazhevo.ru">hello@zazhevo.ru</a>
+                <a href="tel:+74234000000">+7 (4234) 00-00-00</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://vk.com" target="_blank">VK</a>
+                <a href="https://t.me" target="_blank">Telegram</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 ООО «Мегатрейд». Разработано в рамках дипломного проекта
             </div>
         </div>
-    </div>
-
-    <div class="modal-overlay" id="registerModal">
-        <div class="google-modal">
-            <button class="close-modal" onclick="closeRegisterModal()">&times;</button>
-            <div class="modal-header">
-                <h2>Создать аккаунт</h2>
-            </div>
-            <form id="registerForm" onsubmit="register(event)">
-                <div class="input-group"><label>Ваше Имя</label><input type="text" id="regName" placeholder="Алексей" required></div>
-                <div class="input-group"><label>Электронная почта</label><input type="email" id="regEmail" placeholder="alex@dts.ru" required></div>
-                <div class="input-group"><label>Придумайте пароль</label><input type="password" id="regPassword" placeholder="******" required></div>
-                <div style="height:10px;"></div>
-                <button type="submit" class="btn-submit">Зарегистрироваться</button>
-                <p style="font-size:0.9rem; margin-top:20px; color:var(--text-muted); text-align:center;">
-                    Уже есть аккаунт? <a href="#" onclick="openLoginFromRegister(event)" style="color:var(--primary-red); font-weight:700; text-decoration:none;">Войти</a>
-                </p>
-            </form>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="productModal" onclick="closeProductModalOutside(event)">
-        <div class="google-modal" style="max-width: 500px; padding: 0; overflow: hidden; text-align: left;">
-            <button class="close-modal" onclick="closeProductModal()" style="top: 12px; right: 16px; z-index: 10; background: rgba(255,255,255,0.8); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">&times;</button>
-            
-            <div style="height: 250px; background: #f1f3f4; overflow: hidden;">
-                <img id="modalProductImg" src="" style="width: 100%; height: 100%; object-fit: cover;" alt="">
-            </div>
-            
-            <div style="padding: 24px;">
-                <h2 id="modalProductTitle" style="font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; color: var(--text-black);">Название товара</h2>
-                <div style="display: flex; gap: 12px; margin-bottom: 16px; font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
-                    <span id="modalProductCategory" style="background: #f1f3f4; padding: 4px 10px; border-radius: 6px; text-transform: uppercase;">Категория</span>
-                    <span style="background: rgba(218, 41, 28, 0.06); color: var(--primary-red); padding: 4px 10px; border-radius: 6px;">🔥 320 ккал</span>
-                </div>
-                
-                <p id="modalProductDesc" style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">Подробное описание...</p>
-                
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e8eaed; padding-top: 20px;">
-                    <div>
-                        <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Цена заказа:</p>
-                        <span id="modalProductPrice" style="font-size: 1.6rem; font-weight: 800; color: var(--text-black);">0 ₽</span>
-                    </div>
-                    <div id="modalProductActionSlot"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Оформление заказа</h3>
-            <button class="close-cart" onclick="toggleCart()">&times;</button>
-        </div>
-        
-        <div class="delivery-time-badge" id="deliveryTimeBox">
-            <span class="material-symbols-rounded">pace</span>
-            <span id="estimatedTimeText">Время ожидания: 0 мин.</span>
-        </div>
-
-        <div class="cart-items" id="cartItems">
-            </div>
-
-        <div class="checkout-fields-container">
-            <div class="input-group-sm">
-                <label>Улица доставки (Уссурийск)</label>
-                <select id="deliveryStreet" style="width:100%; padding:10px; border:1px solid #e8eaed; border-radius:8px;">
-                    <option value="Фестивальная зона ДТС">Фестивальная зона ДТС (Самовывоз)</option>
-                    <option value="ул. Ленина">ул. Ленина (Доставка курьером)</option>
-                    <option value="ул. Некрасова">ул. Некрасова (Доставка курьером)</option>
-                    <option value="ул. Чичерина">ул. Чичерина (Доставка курьером)</option>
-                    <option value="ул. Владивостокское шоссе">ул. Владивостокское шоссе (Доставка курьером)</option>
-                </select>
-            </div>
-            <div class="input-group-sm" style="margin-top: 10px;">
-                <label>Способ оплаты</label>
-                <select id="paymentType" style="width:100%; padding:10px; border:1px solid #e8eaed; border-radius:8px;">
-                    <option value="Банковская карта онлайн">Банковская карта онлайн</option>
-                    <option value="Система быстрых платежей (СБП)">Система быстрых платежей (СБП)</option>
-                    <option value="Наличными при получении">Наличными при получении</option>
-                </select>
-            </div>
-            <div class="promocode-area" style="margin-top: 12px;">
-                <input type="text" id="promoInput" placeholder="Промокод (DTS2026)">
-                <button onclick="applyPromo()">Применить</button>
-            </div>
-            <p id="promoStatusMessage" style="font-size:0.8rem; font-weight:700; margin-top:5px; display:none;"></p>
-        </div>
-
-        <div class="cart-footer">
-            <div class="cart-total"><span>Итого к оплате:</span><span id="cartTotalSum">0 ₽</span></div>
-            <button class="btn-submit" onclick="checkoutOrder()">Оплатить и заказать</button>
-        </div>
-    </div>
-
-    <footer class="dts-footer">
-        <div class="footer-logo"><span>Дипломный проект интернет-сервиса ООО «Дальторгсервис» &bull; 2026</span></div>
     </footer>
+
+    <div class="modal-overlay" id="successModal">
+        <div class="success-alert-box">
+            <h3>Спасибо, мы свяжемся с вами!</h3>
+            <button class="btn-zazhevo" onclick="closeSuccessModal()" style="margin-top: 15px; padding: 10px 30px;">ОК</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < e.length; j++) {if (e[j].src === t) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=t,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(99999999, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/99999999" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
     <script src="script.js"></script>
 </body>
